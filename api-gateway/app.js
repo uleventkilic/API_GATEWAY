@@ -8,7 +8,6 @@ const PORT = 3000;
 
 app.use(express.json()); // JSON Body Middleware
 
-// Swagger Ayarları
 const swaggerOptions = {
     swaggerDefinition: {
         openapi: "3.0.0",
@@ -21,13 +20,12 @@ const swaggerOptions = {
             { url: "http://localhost:3000" }
         ],
     },
-    apis: ["./app.js"], // Swagger açıklamalarını buradan okuyacak
+    apis: ["./app.js"],
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-// Kök Endpoint
 app.get("/", (req, res) => {
     res.send("Welcome to Service!  Go to <a href='/api-docs'>/api-docs</a> for API documentation.");
   });
@@ -138,7 +136,6 @@ app.post("/api/payments", async (req, res) => {
     }
 });
 
-// API Gateway Başlatma
 app.listen(PORT, () => {
     console.log(`API Gateway çalışıyor: http://localhost:${PORT}`);
     console.log(`Swagger UI: http://localhost:${PORT}/api-docs`);
