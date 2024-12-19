@@ -38,7 +38,7 @@ This project is a microservices-based system designed to handle user management,
 ## YouTube Video
 For a detailed explanation and code walkthrough of this project, watch the following YouTube video:
 
-[YouTube Video Link]: Add the video link here
+[https://youtu.be/vhdNQSE2iBQ]
 
 ---
 
